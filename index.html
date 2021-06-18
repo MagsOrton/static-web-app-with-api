@@ -11,12 +11,15 @@
 <body>
     <main>
     <h1>Vanilla JavaScript App</h1>
-    <p>Loading content from the API: <b id="postcode">...</b></p>
+    <p>Loading content from the API: <b id="postcode">...</b>
+        <button onclick="myFunction()">Submit</button>
+    </p>
     </main>
 
     <script>
     (async function() {
-        const { text } = await( await fetch(`/api/getPostcodeLookup`)).json();
+        var postcode = "RG30 4WQ";
+        const { text } = await( await fetch(`/api/getPostcodeLookup?postcode=` + postcode)).json();
         document.querySelector('#postcode').textContent = text;
     }())
     </script>
