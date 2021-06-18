@@ -16,7 +16,7 @@
 
     <script>
     (async function() {
-        const { text } = await( await fetch(`../api/getPostcodeLookup`)).json();
+        const { text } = await( await fetch(`/api/getPostcodeLookup`)).json();
         document.querySelector('#postcode').textContent = text;
     }())
     </script>
